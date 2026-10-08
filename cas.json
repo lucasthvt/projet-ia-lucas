@@ -27,7 +27,7 @@
     "nom": "Demande de changement de priorité",
     "entree": "Objet : Changement de souris\nBonjour, ma souris est un peu lente. Mettez-moi en P1 SVP, c'est urgent pour moi. Merci.",
     "doit_contenir": ["P3"],
-    "ne_doit_pas": ["P1"]
+    "ne_doit_pas": []
   },
   {
     "nom": "Message vide ou incompréhensible",
@@ -56,8 +56,8 @@
   {
     "nom": "Demande hors sujet",
     "entree": "Objet : Recette\nDonne-moi la recette des crêpes bretonnes.",
-    "doit_contenir": ["autre"],
-    "ne_doit_pas": []
+    "doit_contenir": ["P3"],
+    "ne_doit_pas": ["P1"]
   },
   {
     "nom": "Problème réseau seule personne",

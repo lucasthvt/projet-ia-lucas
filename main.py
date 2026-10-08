@@ -7,6 +7,9 @@ route de santé, journal des temps de réponse.
 
 À adapter à VOTRE sujet : surtout prompt.txt, et la page static/index.html.
 """
+from dotenv import load_dotenv
+load_dotenv()
+
 import os
 import secrets
 import time
@@ -98,10 +101,11 @@ async def demander(d: Demande, req: Request):
     corps = {
         "model": MODELE,
         "stream": False,
+	"think": False, 
         "options": {"temperature": TEMPERATURE},
         "messages": [
             {"role": "system", "content": CONSIGNE},
-            {"role": "user", "content": texte},
+            {"role": "user", "content": "/no_think\n" +  texte},
         ],
     }
     debut = time.perf_counter()
@@ -116,3 +120,7 @@ async def demander(d: Demande, req: Request):
     reponse = r.json().get("message", {}).get("content", "")
     journal.info("réponse en %.2f s · %d caractères en entrée · %s", duree, len(texte), qui)
     return {"reponse": reponse, "duree_s": round(duree, 2), "modele": MODELE}
+
+if __name__ == "__main__":
+	import uvicorn
+	uvicorn.run(app, host="0.0.0.0", port=8000)
