@@ -38,6 +38,12 @@ L'application classe et priorise automatiquement chaque message en JSON, pour qu
 | Pourquoi celui-là | Tient confortablement dans 16 Go avec Docker en parallèle ; bon compromis vitesse/qualité ; mesuré à 6,5 tokens/s |
 | Modèle comparé | qwen2.5:3b |
 
+**Justification par la mémoire (capture `ollama ps`) :**
+
+![Capture ollama ps](docs/ollama-ps.png)
+
+Le modèle `qwen3:8b` occupe environ 6 Go en mémoire unifiée, ce qui laisse assez de place pour macOS, Docker et les conteneurs sur un Mac M4 16 Go.
+
 ---
 
 ## 3. Piloter — le journal
