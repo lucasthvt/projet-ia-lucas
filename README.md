@@ -1,6 +1,6 @@
 # Projet IA — BTS SIO 2 SLAM — Lucas THEVENET — octobre 2026
 
-URL publique : https://lisa-dale-emma-charles.trycloudflare.com
+URL publique : https://warrant-revised-maple-physiology.trycloudflare.com
 Code d'accès envoyé à l'enseignant par e-mail
 
 ---
