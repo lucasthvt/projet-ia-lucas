@@ -20,6 +20,7 @@ from pathlib import Path
 import httpx
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 # ── Réglages : tout vient de l'environnement (fichier .env), rien en dur ──────
@@ -42,6 +43,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 journal = logging.getLogger("projet-ia")
 
 app = FastAPI(title="Projet IA", docs_url=None, redoc_url=None)
+app.mount("/static", StaticFiles(directory=ICI / "static"), name="static")
 
 
 # ── Limite de requêtes, par visiteur ──────────────────────────────────────────

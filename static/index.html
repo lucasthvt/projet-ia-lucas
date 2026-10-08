@@ -4,29 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TriSupport IA</title>
-<style>
-  body { font: 17px/1.5 system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; color: #222; }
-  textarea, input, button { font: inherit; width: 100%; box-sizing: border-box; margin: .3rem 0 .8rem; padding: .4rem; }
-  button { cursor: pointer; background: #2c3e50; color: white; border: none; border-radius: 4px; padding: .6rem; }
-  button:hover { background: #34495e; }
-  button:disabled { background: #95a5a6; cursor: wait; }
-  #sortie { white-space: pre-wrap; background: #f3f3f0; padding: 1rem; border-radius: 6px; min-height: 2rem; }
-  .meta { color: #666; font-size: .85rem; }
-</style>
+<link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <h1>TriSupport IA</h1>
-  <p>Tri automatique des demandes de support informatique de l'Atelier Numérique du Pilat : catégorie, priorité et résumé en JSON.</p>
+  <main>
+    <h1>TriSupport IA</h1>
+    <p class="subtitle">Tri automatique des demandes de support informatique de l'Atelier Numérique du Pilat.</p>
 
-  <label for="code">Code d'accès</label>
-  <input id="code" type="password" autocomplete="off">
+    <label for="code">Code d'accès</label>
+    <input id="code" type="password" autocomplete="off" placeholder="Votre code d'accès">
 
-  <label for="texte">Votre demande</label>
-  <textarea id="texte" rows="6" maxlength="2000"></textarea>
+    <label for="texte">Votre demande</label>
+    <textarea id="texte" rows="6" maxlength="2000" placeholder="Collez ici le message à trier…"></textarea>
 
-  <button id="envoyer">Envoyer</button>
-  <div id="sortie" aria-live="polite"></div>
-  <p class="meta" id="meta"></p>
+    <button id="envoyer">Envoyer</button>
+    <div id="sortie" aria-live="polite"></div>
+    <p class="meta" id="meta"></p>
+  </main>
 
 <script>
 const $ = (id) => document.getElementById(id);
