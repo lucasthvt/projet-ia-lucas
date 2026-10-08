@@ -17,7 +17,7 @@ services:
   app:
     build: .
     env_file: .env
-    restart: unless-stopped
+    restart: always
     extra_hosts:
       - "host.docker.internal:host-gateway"
     # Le port n'est ouvert que sur la machine elle-même : Internet passe par le tunnel.
